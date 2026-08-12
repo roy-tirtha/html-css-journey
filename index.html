@@ -1,185 +1,385 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <link rel="icon" type="image/jpg" href="images/avater.png">
-    <title>Roys Web</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roy's Web Journey</title>
+    <link rel="icon" type="image/png" href="images/avater.png">
+    <style>
+        :root {
+            --bg: #f5f7fa;
+            --card: #ffffff;
+            --accent: #2a6f9e;
+            --accent-soft: #7fb0d6;
+            --text: #243446;
+            --muted: #5a6d7a;
+        }
 
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.55;
+            color: var(--text);
+            background: linear-gradient(180deg, #eef4fb 0%, #ffffff 100%);
+        }
+
+        header {
+            padding: 28px 24px;
+            background: var(--accent);
+            color: #fff;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: clamp(2rem, 3vw, 3rem);
+        }
+
+        header p {
+            margin: 0.85rem auto 0;
+            max-width: 740px;
+            font-size: 1rem;
+            opacity: 0.95;
+        }
+
+        main {
+            max-width: 1120px;
+            margin: 0 auto;
+            padding: 24px 20px 40px;
+        }
+
+        section {
+            margin-bottom: 32px;
+            padding: 24px;
+            background: var(--card);
+            border-radius: 24px;
+            box-shadow: 0 18px 45px rgba(20, 40, 70, 0.08);
+        }
+
+        section h2 {
+            margin-top: 0;
+            color: var(--accent);
+        }
+
+        .grid {
+            display: grid;
+            gap: 20px;
+        }
+
+        .grid-2 {
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        }
+
+        .card {
+            padding: 18px;
+            background: #fbfdff;
+            border: 1px solid rgba(42, 111, 158, 0.12);
+            border-radius: 18px;
+        }
+
+        a.card-link {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .button-link,
+        input[type=submit] {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.9rem 1.4rem;
+            background: var(--accent);
+            color: #fff;
+            border-radius: 999px;
+            border: none;
+            cursor: pointer;
+            font-weight: 700;
+            text-decoration: none;
+            transition: background 0.2s ease;
+        }
+
+        .button-link:hover,
+        input[type=submit]:hover {
+            background: #1f5779;
+        }
+
+        footer {
+            font-size: 0.95rem;
+            color: var(--muted);
+            text-align: center;
+            padding: 18px 20px 30px;
+        }
+
+        .highlight {
+            background: rgba(42, 111, 158, 0.12);
+            padding: 0.3rem 0.5rem;
+            border-radius: 0.5rem;
+            display: inline-block;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 16px;
+        }
+
+        th,
+        td {
+            padding: 0.95rem 1rem;
+            text-align: left;
+            border-bottom: 1px solid rgba(36, 52, 70, 0.12);
+        }
+
+        th {
+            background: #f0f6fb;
+            color: var(--accent);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+            color: var(--accent);
+        }
+
+        input[type=text] {
+            width: 100%;
+            padding: 0.9rem 1rem;
+            border: 1px solid #cdd7e3;
+            border-radius: 14px;
+        }
+
+        .small-note {
+            color: var(--muted);
+            margin-top: 0.6rem;
+        }
+    </style>
 </head>
 
 <body>
+    <!-- Header section: page title and brief introduction -->
+    <header>
+        <h1>Roy's Web Journey</h1>
+        <p>Using your HTML knowledge to build a page with images, audio, video, lists, tables, buttons, and a form.</p>
+    </header>
 
+    <main>
+        <!-- Nature Gallery section: image link and gif link using <a> and <img> -->
+        <section>
+            <h2>Nature Gallery</h2>
+            <p>Click the image to open a nature site in a new tab.</p>
+            <a class="card-link" href="https://www.learningfornature.org/en/" target="_blank" title="Explore nature">
+                <img src="images/nature.jpg" alt="A picture of nature" style="border-radius:18px;box-shadow:0 16px 40px rgba(0,0,0,0.12);width:100%;height:auto;">
+            </a>
+            <div class="card" style="margin-top:20px;">
+                <a class="card-link" href="https://www.youtube.com/watch?v=djV11Xbc914" target="_blank">
+                    <img src="images/nature_1.gif" alt="Nature gif" style="height:140px;object-fit:cover;border-radius:14px;width:100%;">
+                    <p style="margin:14px 0 0;font-weight:700;">Beauty of nature</p>
+                </a>
+            </div>
+        </section>
 
-    <h1>That was such a nice view</h1>
+        <!-- Media Practice section: <audio> elements and <video> element -->
+        <section>
+            <h2>Media Practice</h2>
+            <p>Here are your three audio examples and one video example.</p>
+            <div class="grid grid-2">
+                <div class="card">
+                    <p><strong>Very Happy Christmas</strong></p>
+                    <audio controls autoplay muted loop>
+                        <source src="audios/mixkit-a-very-happy-christmas-897.mp3" type="audio/mpeg">
+                        <source src="audios/mixkit-a-very-happy-christmas-897.wav" type="audio/wav">
+                    </audio>
+                </div>
+                <div class="card">
+                    <p><strong>Hip hop track</strong></p>
+                    <audio controls>
+                        <source src="audios/mixkit-hip-hop-02-738.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+                <div class="card">
+                    <p><strong>Urban beat</strong></p>
+                    <audio controls>
+                        <source src="audios/mixkit-deep-urban-623.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+            </div>
+            <div style="margin-top:24px;">
+                <h3>Video file experiment</h3>
+                <a href="https://samplelib.com/sample-mp4.html" target="_blank" class="card-link">
+                    <video controls muted style="border-radius:18px;box-shadow:0 16px 35px rgba(0,0,0,0.12);width:100%;height:auto;">
+                        <source src="videos/sample-5s.mp4" type="video/mp4">
+                        <source src="videos/sample-5s.webm" type="video/webm">
+                    </video>
+                </a>
+            </div>
+        </section>
 
-    <a href="https://www.learningfornature.org/en/" target="_blink" title="a way to explore neature">
-        <img src="images/nature.jpg" alt="This is a picture of Nature" height="400" width="800">
+        <!-- Text Formatting section: inline text tags like <strong>, <em>, <del>, <big>, <small>, <sup>, <sub>, and <mark> -->
+        <section>
+            <h2>Text Formatting</h2>
+            <p>These examples show how text changes with HTML tags.</p>
+            <p>That was normal text</p>
+            <p>That was <strong>normal</strong> text</p>
+            <p>That was <em>italic</em> text</p>
+            <p>That was <strong><u>underlined</u></strong> text</p>
+            <p>That was <del>deleted</del> text</p>
+            <p>That was <big>big</big> text</p>
+            <p>That was <small>small</small> text</p>
+            <p>That was <sup>superscript</sup> text</p>
+            <p>That was <sub>subscript</sub> text</p>
+            <p>That was <mark>marked</mark> text</p>
+            <p class="highlight">Now a days the <strong>X<sup>2</sup></strong> algebraic equations are becoming very popular.</p>
+        </section>
 
-    </a>
-    <br>
-    <br><br><br><br>
+        <!-- Lists section: unordered list, nested list, ordered list, and definition list -->
+        <section class="grid grid-2">
+            <div>
+                <h2>Lists</h2>
+                <div class="card">
+                    <h3>Groceries</h3>
+                    <ul>
+                        <li>Eggs</li>
+                        <li>Milk
+                            <ul>
+                                <li>Packet Milk</li>
+                                <li>Fresh Milk</li>
+                                <li>Buffalo Milk</li>
+                            </ul>
+                        </li>
+                        <li>Bread</li>
+                        <li>Chicken</li>
+                    </ul>
+                </div>
+                <div class="card" style="margin-top:20px;">
+                    <h3>To DO List</h3>
+                    <ol>
+                        <li>HTML</li>
+                        <li>CSS</li>
+                        <li>JavaScript</li>
+                    </ol>
+                </div>
+            </div>
+            <div class="card">
+                <h2>Definition List</h2>
+                <dl>
+                    <dt>HTML</dt>
+                    <dd>HyperText Markup Language used to structure web pages.</dd>
+                    <dt>CSS</dt>
+                    <dd>Cascading Style Sheets used to style web pages.</dd>
+                    <dt>JavaScript</dt>
+                    <dd>A programming language used to make web pages interactive.</dd>
+                </dl>
+            </div>
+        </section>
 
+        <!-- Table section: table with header row and data rows -->
+        <section>
+            <h2>Table</h2>
+            <p>Data organized cleanly in a table.</p>
+            <table>
+                <tr>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>City</th>
+                </tr>
+                <tr>
+                    <td>Roy</td>
+                    <td>25</td>
+                    <td>London</td>
+                </tr>
+                <tr>
+                    <td>Anna</td>
+                    <td>30</td>
+                    <td>Paris</td>
+                </tr>
+            </table>
+        </section>
 
-    <a href="https://www.youtube.com/watch?v=djV11Xbc914" target="_blink">
-        <img src="images/nature_1.gif" alt="gif of nature" height="20">
-        Beauty of nature
-    </a>
+        <!-- Interactive section: button with JavaScript and a form with input validation -->
+        <section>
+            <h2>Interactive Section</h2>
+            <div class="grid grid-2">
+                <div class="card">
+                    <button class="button-link" onclick="changeTitle()">Touch Me</button>
+                    <p id="XYZ" style="margin-top:18px;font-size:1.25rem;font-weight:700;">super</p>
+                </div>
+                <div class="card">
+                    <form action="index.php" method="POST">
+                        <label for="username">Username</label>
+                        <input type="text" id="username" name="username" minlength="6" required placeholder="Enter your name">
+                        <input type="submit" value="Send">
+                        <p class="small-note">Use at least 6 characters.</p>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
 
-    <br><br>
-
-
-
-    
-    <hr>
-
-    <p>Very_Happy Christmas</p>
-
-
-    <audio controls autoplay muted loop>
-        <source src="audios/mixkit-a-very-happy-christmas-897.mp3" type="audio/mpeg">
-        <source src="audios/mixkit-a-very-happy-christmas-897.wav" type="audio/wav">
-    </audio>
-
-
-    <p>Very_Happy Christmas</p>
-    <audio controls>
-        <source src="audios/mixkit-hip-hop-02-738.mp3">
-    </audio>
-
-    <p>Very_Happy Christmas</p>
-    <audio controls>
-        <source src="audios/mixkit-deep-urban-623.mp3">
-    </audio>
-
-    <br><br>
-    <hr>
-    <br><br><br><br>
-
-    <h1>video file experementes</h1>
-    <hr>
-
-    <a href="https://samplelib.com/sample-mp4.html" target="_blink">
-    <video width="500px" controls muted>
-        <source src="videos/sample-5s.mp4" type="video/mp4">
-        <source src="videos/sample-5s.webm" type="video/webm">
-    </video>
-    </a>
-
-
-    <br>
-    <hr>
-    <br><br><br>
-
-    <p>That was normal text</p>
-    <p>That was <b>normal</b> text</p>
-    <p>That was <i>italic</i> text</p>
-    <p>That was <b> <u>Underline</u></b> text</p>
-    <p>That was <del>deleted</del> text</p>
-    <p>That was <big>big</big> text</p>
-    <p>That was <small>small</small> text</p>
-
-    <p>That was <sup>supscript</sup> text</p>
-    <p>That was <sub>subscripte</sub> text</p>
-
-    <p>That was <mark>marke</mark> text</p>
-    <p>That was <mark style="background-color:lightgreen"> normal text</p>
-
-
-
-   <hr>
-        <p><h2>Now a days the</h2 > <big><i><mark>algebric equations</mark></i></big> like <b> X<sup>2</sup></b> is become very popular</p>
-
-    
-
-    <br>
-    <hr>
-    <br><br><br>
-
-    <!-- GROUP TOGETHER HTML -->
-    <!-- <span> inline container to group elements for styling purposes -->
-    <!-- <div> block container to group elements for styling purposes -->
-
-    <br>
-    <hr>
-    <br><br><br>
-
-    <!--Unordered List -->
-    <h4>Groceries</h4>
-    <ul>
-        <li>Eggs</li>
-        <li>Milk</li>
-        <ul>
-            <li>Packet Milk</li>
-            <li>Fresh Milk</li>
-            <li>Buffalo Milk</li>
-        </ul>
-        <li>Bread</li>
-        <li>Chicken</li>
-    </ul>
-
-    <!--Ordered List-->
-    <h4>To DO List</h4>
-    <ol>
-        <li>Html</li>
-        <li>Css</li>
-        <li>JavaScript</li>
-    </ol>
-
-    <!--Description List-->
-    <h4>Definition List Example</h4>
-    <dl style="background-color:moccasin; border: 2px solid black; padding: 10px;">
-        <dt>HTML</dt>
-        <dd>HyperText Markup Language used to structure web pages.</dd>
-
-        <dt>CSS</dt>
-        <dd>Cascading Style Sheets used to style web pages.</dd>
-
-        <dt>JavaScript</dt>
-        <dd>A programming language used to make web pages interactive.</dd>
-    </dl>
-
-    <br>
-    <hr>
-    <br><br><br>
-
-    <!-- Table Example -->
-    <table border="1" cellpadding="10" cellspacing="0">
-        <tr>
-            <th>Name</th>
-            <th>Age</th>
-            <th>City</th>
-        </tr>
-        <tr>
-            <td>Roy</td>
-            <td>25</td>
-            <td>London</td>
-        </tr>
-        <tr>
-            <td>Anna</td>
-            <td>30</td>
-            <td>Paris</td>
-        </tr>
-    </table>
-
-
-    <br>
-    <hr>
-    <br><br><br>
-
-
-    <a href="https://www.google.com/"target="_blink">
-            <button onclick="anything()" style="font-size:25px; background-color:aqua; border-radius:25px" >Touch Me</button>
-    </a>
-    <h1 id="XYZ">super</h1>
+    <footer>
+        <p>Redesigned using your existing HTML knowledge. Make it your own by changing text, colors, and layout.</p>
+    </footer>
 
     <script>
-        function anything(){
-            document.getElementById("XYZ").innerHTML ="Not so super"
+        function changeTitle() {
+            document.getElementById('XYZ').textContent = 'Not so super';
         }
-
-
     </script>
 
+    <!-- 📝 Custom Form Section with User Input Fields -->
+    <section style="padding: 40px; background: #f9f9f9;">
+        <h2>🎯 User Registration Form</h2>
+        
+        <!-- 👤 Username input field for user identification -->
+        <form action="index.php" method="POST" style="max-width: 500px; margin: 20px auto; background: white; padding: 30px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+            <div style="margin-bottom: 20px;">
+                <label for="user" style="display: block; margin-bottom: 8px; font-weight: bold;">👤 Username</label>
+                <input type="text" id="user" name="username" placeholder="Enter your username" style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px; box-sizing: border-box;">
+            </div>
+
+            <!-- 📧 Email input field for contact information -->
+            <div style="margin-bottom: 20px;">
+                <label for="mail" style="display: block; margin-bottom: 8px; font-weight: bold;">📧 Email</label>
+                <input type="email" id="mail" name="email" placeholder="Enter your email address" style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px; box-sizing: border-box;">
+            </div>
+
+            <!-- 🔐 Password input field for security -->
+            <div style="margin-bottom: 20px;">
+                <label for="pass" style="display: block; margin-bottom: 8px; font-weight: bold;">🔐 Password</label>
+                <input type="password" id="pass" name="password" placeholder="Enter your password" style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px; box-sizing: border-box;">
+            </div>
+
+            <!-- 🔄 Reset button to clear the form -->
+            <button type="reset" style="background: #ff6b6b; color: white; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer; margin-right: 10px;">🔄 Reset</button>
+            
+            <!-- ✅ Submit button to send form data -->
+            <button type="submit" style="background: #51cf66; color: white; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer;">✅ Submit</button>
+        </form>
+    </section>
+
+    
+
+
+
+
+
+
+
+
+
+    
+
+
+
+    
+
+
+   
 
 
 
